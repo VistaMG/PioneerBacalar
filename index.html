@@ -42,7 +42,7 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,24,32,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,159,134,0.12);transition:background .4s}
 .nav-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
 .nav-brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-.nav-brand-icon{width:34px;height:34px;flex-shrink:0}
+.nav-brand-icon{width:54px;height:auto;flex-shrink:0}
 .nav-brand-text{display:flex;flex-direction:column;line-height:1}
 .nav-brand-name{font-family:var(--font-display);font-size:1.35rem;font-weight:500;color:var(--cream);letter-spacing:.04em}
 .nav-brand-sub{font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;color:var(--green-light);margin-top:.25rem;font-weight:500}
@@ -65,7 +65,7 @@ img{max-width:100%;display:block}
 
 .hero-content{position:relative;z-index:2;max-width:920px;display:flex;flex-direction:column;align-items:center}
 .hero-mark{margin-bottom:2.5rem;animation:fadeUp 1s ease .2s both}
-.hero-mark svg{width:84px;height:auto;filter:drop-shadow(0 6px 24px rgba(0,0,0,0.4))}
+.hero-mark svg{width:130px;height:auto;filter:drop-shadow(0 6px 24px rgba(0,0,0,0.4))}
 .hero-eyebrow{font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.5rem;font-weight:500;animation:fadeUp 1s ease .4s both}
 .hero-title{font-family:var(--font-display);font-size:clamp(3rem,7.5vw,6.4rem);font-weight:300;line-height:1.02;color:var(--cream);letter-spacing:-.01em;animation:fadeUp 1s ease .55s both}
 .hero-title em{font-style:italic;color:var(--cream);font-weight:300}
@@ -197,7 +197,7 @@ img{max-width:100%;display:block}
 .footer-inner{max-width:1280px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(245,240,230,0.08)}
 .footer-brand{display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem}
-.footer-brand-icon{width:42px;height:42px}
+.footer-brand-icon{width:64px;height:auto}
 .footer-brand-text{display:flex;flex-direction:column;line-height:1}
 .footer-brand-name{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--cream);letter-spacing:.04em}
 .footer-brand-sub{font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;color:var(--green-light);margin-top:.3rem;font-weight:500}
@@ -235,9 +235,9 @@ img{max-width:100%;display:block}
   .hamburger{display:flex}
   .nav-cta{display:none}
   .nav-brand-name{font-size:1.15rem}
-  .nav-brand-icon{width:28px;height:28px}
+  .nav-brand-icon{width:42px;height:auto}
   .hero{padding:7rem 1.5rem 5rem}
-  .hero-mark svg{width:64px}
+  .hero-mark svg{width:100px}
   .hero-ctas{flex-direction:column;width:100%;align-items:stretch;max-width:300px;margin:0 auto}
   .btn-primary,.btn-outline{text-align:center;padding:1rem 2rem}
   section.intro,section.experience,section.details,section.location,section.contact{padding:5rem 1.5rem}
@@ -264,14 +264,31 @@ img{max-width:100%;display:block}
 <!-- ============ MELIPONA ICON SVG (reusable) ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="melipona-icon" viewBox="0 0 200 130">
-      <path d="M 18 95 L 38 80 L 50 95 L 30 110 Z" fill="#054252"/>
-      <path d="M 50 78 L 70 60 L 80 78 L 60 95 Z" fill="#2d9f86"/>
-      <path d="M 80 60 L 96 38 L 104 56 L 88 78 Z" fill="#2d9f86"/>
-      <path d="M 100 18 L 112 30 L 100 50 L 88 38 Z" fill="#dd4a2a"/>
-      <path d="M 96 56 L 112 38 L 120 60 L 104 78 Z" fill="#2d9f86"/>
-      <path d="M 120 78 L 130 60 L 150 78 L 140 95 Z" fill="#2d9f86"/>
-      <path d="M 150 95 L 162 80 L 182 95 L 170 110 Z" fill="#054252"/>
+    <!--
+      Diamond starburst — 7 diamonds fanning around an invisible center pivot below the visible canvas.
+      Each diamond is rotated by a different angle and color-coded:
+      - Center (0deg): red
+      - ±22deg: inner green pair
+      - ±44deg: outer green pair
+      - ±66deg: deep teal pair
+    -->
+    <symbol id="melipona-icon" viewBox="-5 5 215 100">
+      <g transform="translate(100 130)">
+        <!-- left teal (outermost) -->
+        <g transform="rotate(-66)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#054252"/></g>
+        <!-- left outer green -->
+        <g transform="rotate(-44)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#2d9f86"/></g>
+        <!-- left inner green -->
+        <g transform="rotate(-22)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#2d9f86"/></g>
+        <!-- center red -->
+        <g transform="rotate(0)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#dd4a2a"/></g>
+        <!-- right inner green -->
+        <g transform="rotate(22)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#2d9f86"/></g>
+        <!-- right outer green -->
+        <g transform="rotate(44)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#2d9f86"/></g>
+        <!-- right teal (outermost) -->
+        <g transform="rotate(66)"><path d="M -6 -98 L 0 -82 L 6 -98 L 0 -118 Z" fill="#054252"/></g>
+      </g>
     </symbol>
   </defs>
 </svg>
@@ -280,7 +297,7 @@ img{max-width:100%;display:block}
 <nav class="nav">
   <div class="nav-inner">
     <a href="#home" class="nav-brand" aria-label="Melipona Bacalar Home">
-      <svg class="nav-brand-icon" viewBox="0 0 200 130"><use href="#melipona-icon"/></svg>
+      <svg class="nav-brand-icon" viewBox="-5 5 215 100"><use href="#melipona-icon"/></svg>
       <span class="nav-brand-text">
         <span class="nav-brand-name">MELIPONA</span>
         <span class="nav-brand-sub">Bacalar</span>
@@ -306,7 +323,7 @@ img{max-width:100%;display:block}
   </div>
   <div class="hero-content">
     <div class="hero-mark">
-      <svg viewBox="0 0 200 130"><use href="#melipona-icon"/></svg>
+      <svg viewBox="-5 5 215 100"><use href="#melipona-icon"/></svg>
     </div>
     <div class="hero-eyebrow">Bacalar &nbsp;·&nbsp; Quintana Roo &nbsp;·&nbsp; México</div>
     <h1 class="hero-title">
@@ -320,10 +337,6 @@ img{max-width:100%;display:block}
       <a href="#contact" class="btn-primary">Request Information</a>
       <a href="#story" class="btn-outline">Discover the Project</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <span class="hero-scroll-line"></span>
   </div>
 </section>
 
@@ -420,8 +433,8 @@ img{max-width:100%;display:block}
       <div class="stat-label">Site-Sensitive Design</div>
     </div>
     <div class="stat">
-      <div class="stat-num">Pueblo</div>
-      <div class="stat-label">Mágico Setting</div>
+      <div class="stat-num"><em>Time</em></div>
+      <div class="stat-label">Well Spent</div>
     </div>
   </div>
 </div>
@@ -482,7 +495,7 @@ img{max-width:100%;display:block}
       <p>Bacalar is a designated <em>Pueblo Mágico</em> — a freshwater lagoon stretching nearly 60 kilometers through the southern Yucatán Peninsula. Its layered blues, fed by underground cenotes and ancient stromatolite reefs, are unlike anywhere else in Mexico.</p>
       <p>The town remains intimate by design. Reachable from Cancún, Tulum, and Chetumal, yet a world removed in pace and atmosphere — a place that has long resisted the scale of the Riviera Maya and intends to keep it that way.</p>
       <div class="location-quote">
-        <p>"A retreat for those who measure luxury in stillness, not square footage."</p>
+        <p>"Luxury, here, is measured in hours unhurried — in time well spent, in stillness shared."</p>
       </div>
     </div>
   </div>
@@ -568,7 +581,7 @@ img{max-width:100%;display:block}
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <svg class="footer-brand-icon" viewBox="0 0 200 130"><use href="#melipona-icon"/></svg>
+          <svg class="footer-brand-icon" viewBox="-5 5 215 100"><use href="#melipona-icon"/></svg>
           <div class="footer-brand-text">
             <span class="footer-brand-name">MELIPONA</span>
             <span class="footer-brand-sub">Bacalar</span>
