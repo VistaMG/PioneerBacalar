@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Stay &mdash; Melipona Bacalar</title>
+<meta name="description" content="A private concierge consultation to curate your stay at Melipona Bacalar. Tell us about your occasion, your tastes, and the experiences you wish to live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2d9f86;--green-light:#3dbfa0;--green-glow:rgba(45,159,134,0.15);
+  --teal:#004354;--teal-mid:#00596e;
+  --navy:#272f37;--navy-deep:#1a2028;
+  --red:#dd4a2a;
+  --cream:#f8f6f1;--cream-dim:#efebe2;
+  --white:#fff;
+  --slate:#5a6a6e;--slate-light:#8a9398;
+  --mist:#e5e1d8;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Outfit',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--navy);background:var(--cream);line-height:1.6;font-weight:400;overflow-x:hidden;width:100%;min-height:100vh}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,32,40,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(45,159,134,0.12)}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 2rem}
+.nav-brand{font-family:var(--font-display);font-size:1.4rem;color:var(--cream);text-decoration:none;letter-spacing:.04em;font-weight:500}
+.nav-brand em{font-style:italic;color:var(--green-light);font-weight:400}
+.nav-back{color:var(--cream);text-decoration:none;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;transition:color .3s;display:inline-flex;align-items:center;gap:.5rem}
+.nav-back:hover{color:var(--green-light)}
+.nav-back svg{width:14px;height:14px}
+
+/* HERO */
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:9rem 2rem 4rem;position:relative;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--teal) 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 30% 20%,rgba(45,159,134,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,89,110,0.4) 0%,transparent 50%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:780px;text-align:center}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.5rem;font-weight:500}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,4.4rem);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:1.8rem;letter-spacing:-.01em}
+.hero-title em{font-style:italic;color:var(--green-light);font-weight:400}
+.hero-sub{color:rgba(248,246,241,0.75);font-size:1.05rem;line-height:1.85;max-width:580px;margin:0 auto 2.5rem;font-weight:300}
+.hero-meta{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(248,246,241,0.45)}
+.hero-meta::before,.hero-meta::after{content:'';width:24px;height:1px;background:rgba(248,246,241,0.25)}
+
+/* FORM CONTAINER */
+.form-section{max-width:780px;margin:0 auto;padding:5rem 2rem 6rem;position:relative}
+
+/* PROGRESS */
+.progress{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:4rem;flex-wrap:wrap}
+.progress-step{display:flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate-light);transition:color .4s}
+.progress-step .dot{width:8px;height:8px;border-radius:50%;background:var(--mist);transition:all .4s}
+.progress-step.active{color:var(--teal)}
+.progress-step.active .dot{background:var(--green);box-shadow:0 0 0 4px rgba(45,159,134,0.18)}
+.progress-step.completed{color:var(--green)}
+.progress-step.completed .dot{background:var(--green)}
+.progress-divider{width:24px;height:1px;background:var(--mist)}
+
+/* STEP CARDS */
+.step{display:none;animation:stepFadeIn .5s ease}
+.step.active{display:block}
+@keyframes stepFadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.step-header{margin-bottom:2.5rem;text-align:center}
+.step-eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;font-weight:500}
+.step-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;color:var(--navy);line-height:1.2;margin-bottom:1rem;letter-spacing:-.005em}
+.step-title em{font-style:italic;color:var(--teal);font-weight:400}
+.step-intro{color:var(--slate);font-size:.98rem;line-height:1.8;max-width:560px;margin:0 auto;font-weight:300}
+
+/* FIELDS */
+.field-group{margin-bottom:2.4rem}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+label{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem;font-weight:500}
+label .optional{color:var(--slate-light);font-weight:400;letter-spacing:.08em;text-transform:none;margin-left:.5rem;font-size:.85em}
+label .required{color:var(--red);margin-left:.3rem}
+.field-help{font-size:.85rem;color:var(--slate);margin-bottom:1rem;font-weight:300;font-style:italic;line-height:1.6}
+
+input[type="text"],input[type="email"],input[type="tel"],input[type="date"],input[type="number"],select,textarea{
+  width:100%;
+  padding:.95rem 1.1rem;
+  background:var(--white);
+  border:1px solid var(--mist);
+  border-bottom:1px solid var(--green);
+  font-family:var(--font-body);
+  font-size:.98rem;
+  color:var(--navy);
+  transition:all .3s;
+  border-radius:0;
+  -webkit-appearance:none;
+  appearance:none;
+}
+textarea{min-height:120px;resize:vertical;line-height:1.7}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-glow)}
+input::placeholder,textarea::placeholder{color:var(--slate-light);font-weight:300}
+select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='none' stroke='%232d9f86' stroke-width='1.5' d='M1 1.5l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 1.1rem center;padding-right:2.8rem}
+
+/* CHECKBOX/PILL OPTIONS */
+.options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.options-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.option{position:relative;cursor:pointer}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option-card{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 1.1rem;background:var(--white);border:1px solid var(--mist);transition:all .25s;min-height:100%}
+.option-card .option-check{flex-shrink:0;width:18px;height:18px;border:1.5px solid var(--mist);background:var(--white);position:relative;transition:all .25s;margin-top:.15rem}
+.option-card .option-check::after{content:'';position:absolute;top:50%;left:50%;width:8px;height:8px;background:var(--green);transform:translate(-50%,-50%) scale(0);transition:transform .25s}
+.option-card .option-text{font-size:.92rem;color:var(--navy);line-height:1.5}
+.option-card .option-text small{display:block;font-size:.78rem;color:var(--slate);margin-top:.2rem;font-weight:300;line-height:1.5}
+.option:hover .option-card{border-color:var(--green-light);background:#fdfbf6}
+.option input:checked + .option-card{border-color:var(--green);background:#fafff9;box-shadow:0 1px 0 var(--green) inset}
+.option input:checked + .option-card .option-check{border-color:var(--green);background:var(--white)}
+.option input:checked + .option-card .option-check::after{transform:translate(-50%,-50%) scale(1)}
+.option input[type="radio"] + .option-card .option-check{border-radius:50%}
+.option input[type="radio"] + .option-card .option-check::after{border-radius:50%}
+
+/* CONDITIONAL FIELD (revealed when relevant option ticked) */
+.conditional{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s,opacity .4s,margin .4s;margin-top:0}
+.conditional.show{max-height:400px;opacity:1;margin-top:1.5rem}
+
+/* NAVIGATION BUTTONS */
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--mist);gap:1rem}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.8rem;font-family:var(--font-body);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;background:none;transition:all .3s;text-decoration:none;color:inherit}
+.btn-primary{background:var(--green);color:var(--white);border:1px solid var(--green)}
+.btn-primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn-primary svg{width:14px;height:14px;transition:transform .3s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-secondary{color:var(--slate);background:transparent;border:1px solid transparent}
+.btn-secondary:hover{color:var(--teal)}
+.btn-secondary svg{width:14px;height:14px;transition:transform .3s}
+.btn-secondary:hover svg{transform:translateX(-3px)}
+.btn-secondary[hidden]{visibility:hidden}
+
+/* CONFIRMATION SCREEN */
+.confirmation{display:none;text-align:center;padding:2rem 0}
+.confirmation.active{display:block;animation:stepFadeIn .6s ease}
+.confirmation-icon{width:72px;height:72px;margin:0 auto 2rem;border:1.5px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.confirmation-icon svg{width:32px;height:32px;color:var(--green)}
+.confirmation h2{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--navy);line-height:1.2;margin-bottom:1.2rem;letter-spacing:-.005em}
+.confirmation h2 em{font-style:italic;color:var(--teal)}
+.confirmation p{color:var(--slate);font-size:1rem;line-height:1.85;max-width:520px;margin:0 auto 1rem;font-weight:300}
+.confirmation .signoff{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--teal);margin-top:2.5rem;font-weight:400}
+
+/* FOOTER */
+.foot{background:var(--navy-deep);color:rgba(248,246,241,0.55);padding:2.5rem 2rem;text-align:center;font-size:.78rem;letter-spacing:.06em}
+.foot a{color:var(--green-light);text-decoration:none}
+.foot a:hover{color:var(--cream)}
+
+/* MOBILE */
+@media(max-width:760px){
+  .nav-inner{padding:.7rem 1.2rem}
+  .nav-brand{font-size:1.15rem}
+  .nav-back{font-size:.7rem}
+  .hero{padding:7rem 1.5rem 3rem;min-height:50vh}
+  .form-section{padding:3rem 1.2rem 4rem}
+  .progress{gap:.3rem;margin-bottom:2.5rem}
+  .progress-step span{display:none}
+  .progress-divider{width:14px}
+  .field-row,.field-row-3{grid-template-columns:1fr;gap:1.4rem}
+  .options-grid,.options-grid-3{grid-template-columns:1fr}
+  .step-header{margin-bottom:2rem;text-align:left}
+  .step-nav{flex-direction:row;justify-content:space-between;margin-top:2.5rem;padding-top:2rem}
+  .btn{padding:.85rem 1.2rem;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="nav-inner">
+<a href="/" class="nav-brand">Melipona <em>Bacalar</em></a>
+<a href="/" class="nav-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Return Home</a>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero"><div class="hero-inner">
+<div class="hero-eyebrow">Concierge Consultation</div>
+<h1 class="hero-title">Let us shape something <em>unforgettable.</em></h1>
+<p class="hero-sub">Every stay at Melipona Bacalar is composed by hand &mdash; never templated. Share what brings you to the lagoon, and our concierge team will design an experience drawn entirely around you. There are no booking buttons here. There is only conversation.</p>
+<div class="hero-meta">A private inquiry &middot; Reply within 24 hours</div>
+</div></section>
+
+<!-- FORM -->
+<section class="form-section">
+
+<!-- PROGRESS -->
+<div class="progress" id="progress">
+<div class="progress-step active" data-step="1"><span class="dot"></span><span>Your Stay</span></div>
+<div class="progress-divider"></div>
+<div class="progress-step" data-step="2"><span class="dot"></span><span>The Occasion</span></div>
+<div class="progress-divider"></div>
+<div class="progress-step" data-step="3"><span class="dot"></span><span>Culinary</span></div>
+<div class="progress-divider"></div>
+<div class="progress-step" data-step="4"><span class="dot"></span><span>Experiences</span></div>
+<div class="progress-divider"></div>
+<div class="progress-step" data-step="5"><span class="dot"></span><span>Final Touches</span></div>
+<div class="progress-divider"></div>
+<div class="progress-step" data-step="6"><span class="dot"></span><span>Contact</span></div>
+</div>
+
+<form id="conciergeForm" novalidate>
+
+<!-- STEP 1: STAY DETAILS -->
+<div class="step active" data-step="1">
+<div class="step-header">
+<div class="step-eyebrow">Step 1 of 6</div>
+<h2 class="step-title">Your <em>stay</em></h2>
+<p class="step-intro">A few essentials so we can hold the right space for you. We'll match you with the accommodation that best suits your party once we know more.</p>
+</div>
+
+<div class="field-group">
+<div class="field-row">
+<div><label>Arrival Date <span class="required">*</span></label><input type="date" name="arrival" required></div>
+<div><label>Departure Date <span class="required">*</span></label><input type="date" name="departure" required></div>
+</div>
+</div>
+
+<div class="field-group">
+<div class="field-row-3">
+<div><label>Adults <span class="required">*</span></label><input type="number" name="adults" min="1" max="20" placeholder="2" required></div>
+<div><label>Children <span class="optional">(optional)</span></label><input type="number" name="children" min="0" max="20" placeholder="0"></div>
+<div><label>Travel Party</label><select name="party_type"><option value="">Choose one</option><option>Couple</option><option>Solo retreat</option><option>Family</option><option>Friends</option><option>Multi-generational</option><option>Wedding party</option><option>Other</option></select></div>
+</div>
+</div>
+
+<div class="field-group">
+<label>Approximate Arrival Time <span class="optional">(if known)</span></label>
+<select name="arrival_time"><option value="">Choose one</option><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option><option>Late evening</option><option>Not yet certain</option></select>
+</div>
+
+<div class="field-group">
+<label>How will you reach us?</label>
+<p class="field-help">Most guests fly into Cancún or Chetumal. We can arrange transfer at any point in your journey.</p>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="transfer[]" value="cun_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text">Private transfer from Cancún <small>~4 hours, fully appointed</small></div></div></label>
+<label class="option"><input type="checkbox" name="transfer[]" value="ctm_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text">Private transfer from Chetumal <small>~45 minutes</small></div></div></label>
+<label class="option"><input type="checkbox" name="transfer[]" value="self_drive"><div class="option-card"><div class="option-check"></div><div class="option-text">Self-driving <small>We can advise the route</small></div></div></label>
+<label class="option"><input type="checkbox" name="transfer[]" value="charter"><div class="option-card"><div class="option-check"></div><div class="option-text">Private aviation <small>Helicopter or charter flight</small></div></div></label>
+</div>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" hidden></button>
+<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+
+<!-- STEP 2: THE OCCASION -->
+<div class="step" data-step="2">
+<div class="step-header">
+<div class="step-eyebrow">Step 2 of 6</div>
+<h2 class="step-title">The <em>occasion</em></h2>
+<p class="step-intro">Tell us why you're coming. The mood you're hoping to find &mdash; the moment you want to mark &mdash; shapes nearly everything that follows.</p>
+</div>
+
+<div class="field-group">
+<label>What brings you to Bacalar?</label>
+<p class="field-help">Choose any that resonate. There's no wrong answer, and you can always say "we just need to get away."</p>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="occasion[]" value="serenity"><div class="option-card"><div class="option-check"></div><div class="option-text">Quiet &amp; serenity <small>Disconnect, read, reset</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="anniversary" data-conditional="anniversary_details"><div class="option-card"><div class="option-check"></div><div class="option-text">Anniversary <small>A meaningful one to mark</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="birthday" data-conditional="birthday_details"><div class="option-card"><div class="option-check"></div><div class="option-text">Milestone birthday <small>40th, 50th, or otherwise</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="honeymoon"><div class="option-card"><div class="option-check"></div><div class="option-text">Honeymoon <small>Newly married or belated</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="proposal"><div class="option-card"><div class="option-check"></div><div class="option-text">A proposal <small>We'll keep the secret</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="family"><div class="option-card"><div class="option-check"></div><div class="option-text">Family time <small>Multi-generational gathering</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="wellness"><div class="option-card"><div class="option-check"></div><div class="option-text">Wellness &amp; reset <small>Rituals, movement, healing</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="adventure"><div class="option-card"><div class="option-check"></div><div class="option-text">Adventure <small>The lagoon, jungle, ruins</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="creative"><div class="option-card"><div class="option-check"></div><div class="option-text">Creative retreat <small>Writing, painting, thinking</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="business"><div class="option-card"><div class="option-check"></div><div class="option-text">Work with quietude <small>Offsite or solo</small></div></div></label>
+</div>
+</div>
+
+<div id="anniversary_details" class="conditional">
+<label>Tell us about the anniversary <span class="optional">(year, partner's name, anything you'd like us to know)</span></label>
+<input type="text" name="anniversary_details" placeholder="e.g., 10th wedding anniversary &mdash; would love to surprise my wife Elena">
+</div>
+
+<div id="birthday_details" class="conditional">
+<label>Whose birthday and which year? <span class="optional">(any details that would help us mark it well)</span></label>
+<input type="text" name="birthday_details" placeholder="e.g., my husband's 50th &mdash; he loves single-malt whiskey">
+</div>
+
+<div class="field-group">
+<label>What does the perfect day look like to you? <span class="optional">(in your own words)</span></label>
+<textarea name="perfect_day" placeholder="A long breakfast on the terrace, a swim in the lagoon, an afternoon read in a hammock, dinner under the stars..."></textarea>
+</div>
+
+<div class="field-group">
+<label>Pace of the trip</label>
+<div class="options-grid-3">
+<label class="option"><input type="radio" name="pace" value="slow"><div class="option-card"><div class="option-check"></div><div class="option-text">Slow &amp; spacious <small>Few plans, lots of room to breathe</small></div></div></label>
+<label class="option"><input type="radio" name="pace" value="balanced"><div class="option-card"><div class="option-check"></div><div class="option-text">Balanced <small>A mix of stillness and activity</small></div></div></label>
+<label class="option"><input type="radio" name="pace" value="active"><div class="option-card"><div class="option-check"></div><div class="option-text">Full of life <small>We want to do, see, taste</small></div></div></label>
+</div>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
+<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+
+<!-- STEP 3: CULINARY -->
+<div class="step" data-step="3">
+<div class="step-header">
+<div class="step-eyebrow">Step 3 of 6</div>
+<h2 class="step-title">At the <em>table</em></h2>
+<p class="step-intro">Our cuisine is rooted in the Yucatán &mdash; honey from our Melipona bees, fish from the lagoon, herbs from the garden. Tell us how to cook for you.</p>
+</div>
+
+<div class="field-group">
+<label>Dietary preferences <span class="optional">(check any that apply)</span></label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="diet[]" value="omnivore"><div class="option-card"><div class="option-check"></div><div class="option-text">No restrictions</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="vegetarian"><div class="option-card"><div class="option-check"></div><div class="option-text">Vegetarian</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="vegan"><div class="option-card"><div class="option-check"></div><div class="option-text">Vegan</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="pescatarian"><div class="option-card"><div class="option-check"></div><div class="option-text">Pescatarian</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="gluten_free"><div class="option-card"><div class="option-check"></div><div class="option-text">Gluten-free</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="dairy_free"><div class="option-card"><div class="option-check"></div><div class="option-text">Dairy-free</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="kosher"><div class="option-card"><div class="option-check"></div><div class="option-text">Kosher</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="halal"><div class="option-card"><div class="option-check"></div><div class="option-text">Halal</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="keto"><div class="option-card"><div class="option-check"></div><div class="option-text">Low-carb / Keto</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="other_diet"><div class="option-card"><div class="option-check"></div><div class="option-text">Other (we'll ask below)</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Allergies or sensitivities <span class="required">*</span></label>
+<p class="field-help">Anything our kitchen must absolutely know &mdash; nuts, shellfish, sesame, etc. Please be specific.</p>
+<textarea name="allergies" placeholder="e.g., severe tree-nut allergy in our 8-year-old; my partner can't have shellfish" required></textarea>
+</div>
+
+<div class="field-group">
+<label>Beverage preferences</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="beverage[]" value="wine"><div class="option-card"><div class="option-check"></div><div class="option-text">Wine enthusiasts <small>Pairings, special bottles welcome</small></div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="mezcal"><div class="option-card"><div class="option-check"></div><div class="option-text">Mezcal &amp; agave spirits</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="cocktails"><div class="option-card"><div class="option-check"></div><div class="option-text">Crafted cocktails</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="non_alcoholic"><div class="option-card"><div class="option-check"></div><div class="option-text">Non-alcoholic only <small>Botanical drinks, fresh juices</small></div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text">Champagne moments</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="coffee_tea"><div class="option-card"><div class="option-check"></div><div class="option-text">Serious coffee &amp; tea <small>Specialty brewing</small></div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Dining experiences you'd love</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="dining[]" value="private_chef"><div class="option-card"><div class="option-check"></div><div class="option-text">Private chef in your villa <small>Tasting menu, just for your party</small></div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="beach_dinner"><div class="option-card"><div class="option-check"></div><div class="option-text">Lagoon-side candlelit dinner</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="cooking_class"><div class="option-card"><div class="option-check"></div><div class="option-text">Yucatecan cooking class <small>With our chef &amp; local cooks</small></div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="market_tour"><div class="option-card"><div class="option-check"></div><div class="option-text">Market tour in Bacalar</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="mezcal_tasting"><div class="option-card"><div class="option-check"></div><div class="option-text">Curated mezcal tasting</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="surprise"><div class="option-card"><div class="option-check"></div><div class="option-text">Surprise us <small>Trust your kitchen entirely</small></div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Anything else about food &amp; drink we should know? <span class="optional">(favorites, dislikes, rituals)</span></label>
+<textarea name="culinary_notes" placeholder="e.g., my husband loves a strong espresso first thing &mdash; before anything else. We've been told we eat slowly."></textarea>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
+<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+
+<!-- STEP 4: EXPERIENCES -->
+<div class="step" data-step="4">
+<div class="step-header">
+<div class="step-eyebrow">Step 4 of 6</div>
+<h2 class="step-title">The <em>experiences</em></h2>
+<p class="step-intro">Bacalar's seven-coloured lagoon, the Maya jungle, ancient cenotes, the rhythms of village life &mdash; these are the things we curate around. Indicate what calls to you, and we'll build your days from there.</p>
+</div>
+
+<div class="field-group">
+<label>Wellness &amp; ritual</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="wellness[]" value="temazcal"><div class="option-card"><div class="option-check"></div><div class="option-text">Temazcal with a local shaman <small>An intimate, authentic ceremony</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="couples_massage"><div class="option-card"><div class="option-check"></div><div class="option-text">Couples massage <small>In your villa, lagoon-side</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="solo_massage"><div class="option-card"><div class="option-check"></div><div class="option-text">Solo treatments <small>Massage, facial, body ritual</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="sound_bath"><div class="option-card"><div class="option-check"></div><div class="option-text">Sound bath / breathwork</div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="yoga"><div class="option-card"><div class="option-check"></div><div class="option-text">Private yoga sessions</div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="cacao"><div class="option-card"><div class="option-check"></div><div class="option-text">Cacao ceremony</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>On the lagoon &amp; in the water</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="water[]" value="private_boat"><div class="option-card"><div class="option-check"></div><div class="option-text">Private sailboat day <small>Captain, lunch, the seven blues</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="kayak"><div class="option-card"><div class="option-check"></div><div class="option-text">Kayak or paddleboard</div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="cenote"><div class="option-card"><div class="option-check"></div><div class="option-text">Cenote excursion <small>Sacred Maya freshwater pools</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="stromatolites"><div class="option-card"><div class="option-check"></div><div class="option-text">Stromatolite tour <small>Ancient living formations</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="fishing"><div class="option-card"><div class="option-check"></div><div class="option-text">Fly fishing in the flats</div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="sunset_cruise"><div class="option-card"><div class="option-check"></div><div class="option-text">Sunset cruise with mezcal</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Culture, history &amp; the land</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="culture[]" value="kohunlich"><div class="option-card"><div class="option-check"></div><div class="option-text">Kohunlich ruins <small>Maya archaeological site</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="chacchoben"><div class="option-card"><div class="option-check"></div><div class="option-text">Chacchoben ruins <small>Pyramids in the jungle</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="village"><div class="option-card"><div class="option-check"></div><div class="option-text">Bacalar village walk <small>With a local guide</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="artisan"><div class="option-card"><div class="option-check"></div><div class="option-text">Artisan studio visits <small>Textiles, ceramics, woodwork</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="bee_visit"><div class="option-card"><div class="option-check"></div><div class="option-text">Visit our Melipona bees <small>The sacred stingless bee</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="bird"><div class="option-card"><div class="option-check"></div><div class="option-text">Birdwatching in the reserves</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Logistics &amp; refinements</label>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="logistics[]" value="private_driver"><div class="option-card"><div class="option-check"></div><div class="option-text">Private vehicle &amp; driver <small>For the duration of your stay</small></div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="photographer"><div class="option-card"><div class="option-check"></div><div class="option-text">Personal photographer <small>An hour, a day, the whole stay</small></div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="florist"><div class="option-card"><div class="option-check"></div><div class="option-text">Florist for arrival</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="childcare"><div class="option-card"><div class="option-check"></div><div class="option-text">Trusted childcare</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="butler"><div class="option-card"><div class="option-check"></div><div class="option-text">Dedicated butler</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="security"><div class="option-card"><div class="option-check"></div><div class="option-text">Discretion / privacy detail</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Anything else you've dreamed of, that we haven't listed? <span class="optional"></span></label>
+<textarea name="experiences_other" placeholder="e.g., a calligraphy lesson; a private astronomer for a stargazing night; a chocolatier workshop with the kids..."></textarea>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
+<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+
+<!-- STEP 5: FINAL TOUCHES -->
+<div class="step" data-step="5">
+<div class="step-header">
+<div class="step-eyebrow">Step 5 of 6</div>
+<h2 class="step-title">The smaller <em>graces</em></h2>
+<p class="step-intro">The little things often make the trip. Here is where we ask after them.</p>
+</div>
+
+<div class="field-group">
+<label>Awaiting you on arrival</label>
+<p class="field-help">A welcome that feels personal. Tick anything that resonates &mdash; or specify your own below.</p>
+<div class="options-grid">
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text">A bottle of champagne, chilled</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="flowers"><div class="option-card"><div class="option-check"></div><div class="option-text">Fresh flowers in the room</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="fruit"><div class="option-card"><div class="option-check"></div><div class="option-text">Local fruit &amp; honey board</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="spirits"><div class="option-card"><div class="option-check"></div><div class="option-text">A particular bottle of spirits <small>Tell us which</small></div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="books"><div class="option-card"><div class="option-check"></div><div class="option-text">Curated books &amp; reading</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="note"><div class="option-card"><div class="option-check"></div><div class="option-text">A handwritten welcome note</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>Specific bottles, books, or items to source <span class="optional"></span></label>
+<textarea name="sourcing_requests" placeholder="e.g., a bottle of Casa Dragones Joven; the latest Patti Smith memoir; a particular vinyl &mdash; we'll do our best to source it before you arrive"></textarea>
+</div>
+
+<div class="field-group">
+<label>Is there anything else we should know to make this perfect?</label>
+<p class="field-help">A surprise you're planning. A health consideration. A meaningful date. A guest with a fear of water. Whatever it is &mdash; this is the place.</p>
+<textarea name="final_notes" placeholder="Speak freely. The more you share, the better we can prepare."></textarea>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
+<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+
+<!-- STEP 6: CONTACT -->
+<div class="step" data-step="6">
+<div class="step-header">
+<div class="step-eyebrow">Step 6 of 6</div>
+<h2 class="step-title">Where to <em>find you</em></h2>
+<p class="step-intro">A team member will be in touch within 24 hours, in your preferred way, to begin the conversation.</p>
+</div>
+
+<div class="field-group">
+<div class="field-row">
+<div><label>Full Name <span class="required">*</span></label><input type="text" name="full_name" placeholder="Jane Doe" required></div>
+<div><label>Country of Residence</label><input type="text" name="country" placeholder="United States"></div>
+</div>
+</div>
+
+<div class="field-group">
+<div class="field-row">
+<div><label>Email <span class="required">*</span></label><input type="email" name="email" placeholder="you@example.com" required></div>
+<div><label>Phone <span class="optional">(with country code)</span></label><input type="tel" name="phone" placeholder="+1 305 555 0100"></div>
+</div>
+</div>
+
+<div class="field-group">
+<label>Preferred way to be reached</label>
+<div class="options-grid-3">
+<label class="option"><input type="radio" name="contact_pref" value="email"><div class="option-card"><div class="option-check"></div><div class="option-text">Email</div></div></label>
+<label class="option"><input type="radio" name="contact_pref" value="phone"><div class="option-card"><div class="option-check"></div><div class="option-text">Phone</div></div></label>
+<label class="option"><input type="radio" name="contact_pref" value="whatsapp"><div class="option-card"><div class="option-check"></div><div class="option-text">WhatsApp</div></div></label>
+</div>
+</div>
+
+<div class="field-group">
+<label>How did you hear of Melipona Bacalar? <span class="optional"></span></label>
+<select name="referral"><option value="">Choose one</option><option>Friend or family referral</option><option>Travel advisor</option><option>Press or magazine</option><option>Social media</option><option>Search</option><option>Returning guest</option><option>Other</option></select>
+</div>
+
+<div class="step-nav">
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
+<button type="submit" class="btn btn-primary">Send Inquiry<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+</div>
+</div>
+
+</form>
+
+<!-- CONFIRMATION -->
+<div class="confirmation" id="confirmation">
+<div class="confirmation-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l5 5L20 7"/></svg></div>
+<h2>Thank you. We've <em>received</em> your note.</h2>
+<p>Your inquiry is already in the hands of our concierge team. Within 24 hours, someone will reach out personally &mdash; in the way you've asked &mdash; to begin shaping your stay.</p>
+<p>In the meantime, please feel free to add anything that comes to mind. We read every word.</p>
+<div class="signoff">&mdash; The Melipona Bacalar Team</div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+&copy; Melipona Bacalar &middot; Quintana Roo, M&eacute;xico &middot; <a href="mailto:concierge@pioneerbacalar.com">concierge@pioneerbacalar.com</a>
+</footer>
+
+<script>
+(function(){
+  const form = document.getElementById('conciergeForm');
+  const steps = form.querySelectorAll('.step');
+  const progressSteps = document.querySelectorAll('.progress-step');
+  const confirmation = document.getElementById('confirmation');
+  let currentStep = 1;
+  const totalSteps = steps.length;
+
+  function showStep(n){
+    steps.forEach(s => s.classList.toggle('active', parseInt(s.dataset.step) === n));
+    progressSteps.forEach(p => {
+      const stepNum = parseInt(p.dataset.step);
+      p.classList.toggle('active', stepNum === n);
+      p.classList.toggle('completed', stepNum < n);
+    });
+    currentStep = n;
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Validate the visible step before allowing forward navigation
+  function validateStep(stepEl){
+    const required = stepEl.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if(!field.value.trim()){
+        field.style.borderColor = 'var(--red)';
+        field.style.boxShadow = '0 0 0 3px rgba(221,74,42,0.12)';
+        if(valid){ field.focus(); }
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+        field.style.boxShadow = '';
+      }
+    });
+    return valid;
+  }
+
+  // Next / prev buttons
+  form.addEventListener('click', (e) => {
+    if(e.target.closest('[data-next]')){
+      const stepEl = form.querySelector('.step.active');
+      if(validateStep(stepEl) && currentStep < totalSteps){
+        showStep(currentStep + 1);
+      }
+    }
+    if(e.target.closest('[data-prev]')){
+      if(currentStep > 1) showStep(currentStep - 1);
+    }
+  });
+
+  // Conditional reveal logic (anniversary / birthday details)
+  form.querySelectorAll('input[data-conditional]').forEach(input => {
+    input.addEventListener('change', () => {
+      const target = document.getElementById(input.dataset.conditional);
+      if(target) target.classList.toggle('show', input.checked);
+    });
+  });
+
+  // Submit
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const stepEl = form.querySelector('.step.active');
+    if(!validateStep(stepEl)) return;
+
+    // Gather all form data
+    const formData = new FormData(form);
+    const payload = {};
+    for(const [key, value] of formData.entries()){
+      if(key.endsWith('[]')){
+        const k = key.slice(0, -2);
+        if(!payload[k]) payload[k] = [];
+        payload[k].push(value);
+      } else {
+        payload[key] = value;
+      }
+    }
+
+    // TODO: replace this with your real submission endpoint
+    // Example: fetch('/api/concierge', { method:'POST', body: JSON.stringify(payload) })
+    console.log('Concierge inquiry:', payload);
+
+    // Show confirmation
+    form.style.display = 'none';
+    document.getElementById('progress').style.display = 'none';
+    confirmation.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  // Set min date on arrival/departure to today
+  const today = new Date().toISOString().split('T')[0];
+  form.querySelectorAll('input[type="date"]').forEach(d => d.min = today);
+})();
+</script>
+
+</body>
+</html>
