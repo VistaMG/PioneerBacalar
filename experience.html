@@ -210,8 +210,8 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 
 <div class="field-group">
 <div class="field-row">
-<div><label>Arrival Date <span class="required">*</span></label><input type="date" name="arrival" required></div>
-<div><label>Departure Date <span class="required">*</span></label><input type="date" name="departure" required></div>
+<div><label>Arrival Date <span class="required">*</span></label><input type="date" id="arrival" name="arrival" required></div>
+<div><label>Departure Date <span class="required">*</span></label><input type="date" id="departure" name="departure" required></div>
 </div>
 </div>
 
@@ -627,9 +627,43 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
 
-  // Set min date on arrival/departure to today
+  // Date coupling: arrival's min is today; departure's min is the day after arrival
+  const arrivalInput = document.getElementById('arrival');
+  const departureInput = document.getElementById('departure');
   const today = new Date().toISOString().split('T')[0];
-  form.querySelectorAll('input[type="date"]').forEach(d => d.min = today);
+  arrivalInput.min = today;
+  departureInput.min = today; // initial floor; tightened the moment arrival is picked
+
+  function dayAfter(dateStr){
+    // Use UTC arithmetic so DST shifts can't bump us by a day
+    const d = new Date(dateStr + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + 1);
+    return d.toISOString().split('T')[0];
+  }
+
+  arrivalInput.addEventListener('change', () => {
+    if(!arrivalInput.value) return;
+    const minDeparture = dayAfter(arrivalInput.value);
+    departureInput.min = minDeparture;
+    // If departure is now earlier than or equal to arrival, clear it so the guest re-picks
+    if(departureInput.value && departureInput.value <= arrivalInput.value){
+      departureInput.value = '';
+    }
+  });
+
+  departureInput.addEventListener('change', () => {
+    // Reject any departure date that lands on or before arrival
+    if(arrivalInput.value && departureInput.value && departureInput.value <= arrivalInput.value){
+      departureInput.value = '';
+      departureInput.style.borderColor = 'var(--red)';
+      departureInput.style.boxShadow = '0 0 0 3px rgba(221,74,42,0.12)';
+      // Brief visual nudge — clear it after the next interaction
+      setTimeout(() => {
+        departureInput.style.borderColor = '';
+        departureInput.style.boxShadow = '';
+      }, 2000);
+    }
+  });
 })();
 </script>
 
