@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="doc.title.experience">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@ body{font-family:var(--font-body);color:var(--navy);background:var(--cream);line
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,32,40,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(45,159,134,0.12)}
-.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 2rem}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 5.5rem .8rem 2rem}
 .nav-brand{font-family:var(--font-display);font-size:1.4rem;color:var(--cream);text-decoration:none;letter-spacing:.04em;font-weight:500}
 .nav-brand em{font-style:italic;color:var(--green-light);font-weight:400}
 .nav-back{color:var(--cream);text-decoration:none;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;transition:color .3s;display:inline-flex;align-items:center;gap:.5rem}
@@ -148,7 +148,7 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 
 /* MOBILE */
 @media(max-width:760px){
-  .nav-inner{padding:.7rem 1.2rem}
+  .nav-inner{padding:.7rem 4rem .7rem 1.2rem}
   .nav-brand{font-size:1.15rem}
   .nav-back{font-size:.7rem}
   .hero{padding:7rem 1.5rem 3rem;min-height:50vh}
@@ -169,15 +169,15 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- NAV -->
 <nav class="nav"><div class="nav-inner">
 <a href="/" class="nav-brand">Melipona <em>Bacalar</em></a>
-<a href="/" class="nav-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Return Home</a>
+<a href="/" class="nav-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="nav.return_home">Return Home</span></a>
 </div></nav>
 
 <!-- HERO -->
 <section class="hero"><div class="hero-inner">
-<div class="hero-eyebrow">Concierge Consultation</div>
-<h1 class="hero-title">Let us shape something <em>unforgettable.</em></h1>
-<p class="hero-sub">Every stay at Melipona Bacalar is composed by hand &mdash; never templated. Share what brings you to the lagoon, and our concierge team will design an experience drawn entirely around you. There are no booking buttons here. There is only conversation.</p>
-<div class="hero-meta">A private inquiry &middot; Reply within 24 hours</div>
+<div class="hero-eyebrow" data-i18n="exp.hero.eyebrow">Concierge Consultation</div>
+<h1 class="hero-title" data-i18n="exp.hero.title">Let us shape something <em>unforgettable.</em></h1>
+<p class="hero-sub" data-i18n="exp.hero.sub">Every stay at Melipona Bacalar is composed by hand &mdash; never templated. Share what brings you to the lagoon, and our concierge team will design an experience drawn entirely around you. There are no booking buttons here. There is only conversation.</p>
+<div class="hero-meta" data-i18n="exp.hero.meta">A private inquiry &middot; Reply within 24 hours</div>
 </div></section>
 
 <!-- FORM -->
@@ -185,17 +185,17 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 
 <!-- PROGRESS -->
 <div class="progress" id="progress">
-<div class="progress-step active" data-step="1"><span class="dot"></span><span>Your Stay</span></div>
+<div class="progress-step active" data-step="1"><span class="dot"></span><span data-i18n="exp.prog.1">Your Stay</span></div>
 <div class="progress-divider"></div>
-<div class="progress-step" data-step="2"><span class="dot"></span><span>The Occasion</span></div>
+<div class="progress-step" data-step="2"><span class="dot"></span><span data-i18n="exp.prog.2">The Occasion</span></div>
 <div class="progress-divider"></div>
-<div class="progress-step" data-step="3"><span class="dot"></span><span>Culinary</span></div>
+<div class="progress-step" data-step="3"><span class="dot"></span><span data-i18n="exp.prog.3">Culinary</span></div>
 <div class="progress-divider"></div>
-<div class="progress-step" data-step="4"><span class="dot"></span><span>Experiences</span></div>
+<div class="progress-step" data-step="4"><span class="dot"></span><span data-i18n="exp.prog.4">Experiences</span></div>
 <div class="progress-divider"></div>
-<div class="progress-step" data-step="5"><span class="dot"></span><span>Final Touches</span></div>
+<div class="progress-step" data-step="5"><span class="dot"></span><span data-i18n="exp.prog.5">Final Touches</span></div>
 <div class="progress-divider"></div>
-<div class="progress-step" data-step="6"><span class="dot"></span><span>Contact</span></div>
+<div class="progress-step" data-step="6"><span class="dot"></span><span data-i18n="exp.prog.6">Contact</span></div>
 </div>
 
 <form id="conciergeForm" novalidate>
@@ -203,48 +203,48 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 1: STAY DETAILS -->
 <div class="step active" data-step="1">
 <div class="step-header">
-<div class="step-eyebrow">Step 1 of 6</div>
-<h2 class="step-title">Your <em>stay</em></h2>
-<p class="step-intro">A few essentials so we can hold the right space for you. We'll match you with the accommodation that best suits your party once we know more.</p>
+<div class="step-eyebrow" data-i18n-step="1">Step 1 of 6</div>
+<h2 class="step-title" data-i18n="exp.s1.title">Your <em>stay</em></h2>
+<p class="step-intro" data-i18n="exp.s1.intro">A few essentials so we can hold the right space for you. We'll match you with the accommodation that best suits your party once we know more.</p>
 </div>
 
 <div class="field-group">
 <div class="field-row">
-<div><label>Arrival Date <span class="required">*</span></label><input type="date" id="arrival" name="arrival" required></div>
-<div><label>Departure Date <span class="required">*</span></label><input type="date" id="departure" name="departure" required></div>
+<div><label><span data-i18n="exp.s1.arrival">Arrival Date</span> <span class="required">*</span></label><input type="date" id="arrival" name="arrival" required></div>
+<div><label><span data-i18n="exp.s1.departure">Departure Date</span> <span class="required">*</span></label><input type="date" id="departure" name="departure" required></div>
 </div>
 </div>
 
 <div class="field-group">
 <div class="field-row-3">
-<div><label>Adults <span class="required">*</span></label><input type="number" name="adults" min="1" max="20" placeholder="2" required></div>
-<div><label>Children <span class="optional">(optional)</span></label><input type="number" name="children" min="0" max="20" placeholder="0"></div>
-<div><label>Travel Party</label><select name="party_type"><option value="">Choose one</option><option>Couple</option><option>Solo retreat</option><option>Family</option><option>Friends</option><option>Multi-generational</option><option>Wedding party</option><option>Other</option></select></div>
+<div><label><span data-i18n="exp.s1.adults">Adults</span> <span class="required">*</span></label><input type="number" name="adults" min="1" max="20" placeholder="2" required></div>
+<div><label><span data-i18n="exp.s1.children">Children</span> <span class="optional" data-i18n="exp.optional">(optional)</span></label><input type="number" name="children" min="0" max="20" placeholder="0"></div>
+<div><label data-i18n="exp.s1.party">Travel Party</label><select name="party_type"><option value="" data-i18n="exp.s1.choose">Choose one</option><option data-i18n="exp.s1.party.couple">Couple</option><option data-i18n="exp.s1.party.solo">Solo retreat</option><option data-i18n="exp.s1.party.family">Family</option><option data-i18n="exp.s1.party.friends">Friends</option><option data-i18n="exp.s1.party.multigen">Multi-generational</option><option data-i18n="exp.s1.party.wedding">Wedding party</option><option data-i18n="exp.s1.party.other">Other</option></select></div>
 </div>
 </div>
 
 <div class="field-group">
-<label>Approximate Arrival Time <span class="optional">(if known)</span></label>
-<select name="arrival_time"><option value="">Choose one</option><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option><option>Late evening</option><option>Not yet certain</option></select>
+<label><span data-i18n="exp.s1.arrtime">Approximate Arrival Time</span> <span class="optional">(<span data-i18n="exp.optional">(optional)</span>)</span></label>
+<select name="arrival_time"><option value="" data-i18n="exp.s1.choose">Choose one</option><option data-i18n="exp.s1.arrtime.morning">Morning</option><option data-i18n="exp.s1.arrtime.midday">Midday</option><option data-i18n="exp.s1.arrtime.afternoon">Afternoon</option><option data-i18n="exp.s1.arrtime.evening">Evening</option><option data-i18n="exp.s1.arrtime.late">Late evening</option><option data-i18n="exp.s1.arrtime.unsure">Not yet certain</option></select>
 </div>
 
 <div class="field-group">
-<label>How would you like to arrive?</label>
-<p class="field-help">Most guests fly into Tulum or Cancún. Please select one &mdash; we'll handle the rest in conversation.</p>
+<label data-i18n="exp.s1.transfer.label">How would you like to arrive?</label>
+<p class="field-help" data-i18n="exp.s1.transfer.help">Most guests fly into Tulum or Cancún. Please select one &mdash; we'll handle the rest in conversation.</p>
 <div class="options-grid">
-<label class="option"><input type="radio" name="transfer" value="tulum_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text">Private transfer from Tulum Airport <small>~2 hours, the closest major hub</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="cun_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text">Private transfer from Cancún Airport <small>~4 hours, fully appointed vehicle</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="ctm_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text">Private transfer from Chetumal Airport <small>~45 minutes</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="own_aviation"><div class="option-card"><div class="option-check"></div><div class="option-text">Arriving by private aircraft <small>We'll coordinate ground transfer</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="procure_aviation"><div class="option-card"><div class="option-check"></div><div class="option-text">Please arrange private aviation for us <small>Charter flight or helicopter, sourced by our team</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="self_drive"><div class="option-card"><div class="option-check"></div><div class="option-text">Self-driving <small>We'll advise the route</small></div></div></label>
-<label class="option"><input type="radio" name="transfer" value="undecided"><div class="option-card"><div class="option-check"></div><div class="option-text">Not yet decided <small>Let's discuss the options together</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="tulum_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.tulum">Private transfer from Tulum Airport</span> <small data-i18n="exp.s1.transfer.tulum_sub">~2 hours, the closest major hub</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="cun_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.cun">Private transfer from Cancún Airport</span> <small data-i18n="exp.s1.transfer.cun_sub">~4 hours, fully appointed vehicle</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="ctm_transfer"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.ctm">Private transfer from Chetumal Airport</span> <small data-i18n="exp.s1.transfer.ctm_sub">~45 minutes</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="own_aviation"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.own">Arriving by private aircraft</span> <small data-i18n="exp.s1.transfer.own_sub">We'll coordinate ground transfer</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="procure_aviation"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.procure">Please arrange private aviation for us</span> <small data-i18n="exp.s1.transfer.procure_sub">Charter flight or helicopter, sourced by our team</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="self_drive"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.drive">Self-driving</span> <small data-i18n="exp.s1.transfer.drive_sub">We'll advise the route</small></div></div></label>
+<label class="option"><input type="radio" name="transfer" value="undecided"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s1.transfer.undecided">Not yet decided</span> <small data-i18n="exp.s1.transfer.undecided_sub">Let's discuss the options together</small></div></div></label>
 </div>
 </div>
 
 <div class="step-nav">
 <button type="button" class="btn btn-secondary" hidden></button>
-<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-primary" data-next><span data-i18n="exp.btn.continue">Continue</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -252,55 +252,55 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 2: THE OCCASION -->
 <div class="step" data-step="2">
 <div class="step-header">
-<div class="step-eyebrow">Step 2 of 6</div>
-<h2 class="step-title">The <em>occasion</em></h2>
-<p class="step-intro">Tell us why you're coming. The mood you're hoping to find &mdash; the moment you want to mark &mdash; shapes nearly everything that follows.</p>
+<div class="step-eyebrow" data-i18n-step="2">Step 2 of 6</div>
+<h2 class="step-title" data-i18n="exp.s2.title">The <em>occasion</em></h2>
+<p class="step-intro" data-i18n="exp.s2.intro">Tell us why you're coming. The mood you're hoping to find &mdash; the moment you want to mark &mdash; shapes nearly everything that follows.</p>
 </div>
 
 <div class="field-group">
-<label>What brings you to Bacalar?</label>
-<p class="field-help">Choose any that resonate. There's no wrong answer, and you can always say "we just need to get away."</p>
+<label data-i18n="exp.s2.label">What brings you to Bacalar?</label>
+<p class="field-help" data-i18n="exp.s2.help">Choose any that resonate. There's no wrong answer, and you can always say "we just need to get away."</p>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="occasion[]" value="serenity"><div class="option-card"><div class="option-check"></div><div class="option-text">Quiet &amp; serenity <small>Disconnect, read, reset</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="anniversary" data-conditional="anniversary_details"><div class="option-card"><div class="option-check"></div><div class="option-text">Anniversary <small>A meaningful one to mark</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="birthday" data-conditional="birthday_details"><div class="option-card"><div class="option-check"></div><div class="option-text">Milestone birthday <small>40th, 50th, or otherwise</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="honeymoon"><div class="option-card"><div class="option-check"></div><div class="option-text">Honeymoon <small>Newly married or belated</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="proposal"><div class="option-card"><div class="option-check"></div><div class="option-text">A proposal <small>We'll keep the secret</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="family"><div class="option-card"><div class="option-check"></div><div class="option-text">Family time <small>Multi-generational gathering</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="wellness"><div class="option-card"><div class="option-check"></div><div class="option-text">Wellness &amp; reset <small>Rituals, movement, healing</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="adventure"><div class="option-card"><div class="option-check"></div><div class="option-text">Adventure <small>The lagoon, jungle, ruins</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="creative"><div class="option-card"><div class="option-check"></div><div class="option-text">Creative retreat <small>Writing, painting, thinking</small></div></div></label>
-<label class="option"><input type="checkbox" name="occasion[]" value="business"><div class="option-card"><div class="option-check"></div><div class="option-text">Work with quietude <small>Offsite or solo</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="serenity"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.serenity">Quiet &amp; serenity</span> <small data-i18n="exp.s2.serenity_sub">Disconnect, read, reset</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="anniversary" data-conditional="anniversary_details"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.anniversary">Anniversary</span> <small data-i18n="exp.s2.anniversary_sub">A meaningful one to mark</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="birthday" data-conditional="birthday_details"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.birthday">Milestone birthday</span> <small data-i18n="exp.s2.birthday_sub">40th, 50th, or otherwise</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="honeymoon"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.honeymoon">Honeymoon</span> <small data-i18n="exp.s2.honeymoon_sub">Newly married or belated</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="proposal"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.proposal">A proposal</span> <small data-i18n="exp.s2.proposal_sub">We'll keep the secret</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="family"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.family">Family time</span> <small data-i18n="exp.s2.family_sub">Multi-generational gathering</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="wellness"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.wellness">Wellness &amp; reset</span> <small data-i18n="exp.s2.wellness_sub">Rituals, movement, healing</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="adventure"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.adventure">Adventure</span> <small data-i18n="exp.s2.adventure_sub">The lagoon, jungle, ruins</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="creative"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.creative">Creative retreat</span> <small data-i18n="exp.s2.creative_sub">Writing, painting, thinking</small></div></div></label>
+<label class="option"><input type="checkbox" name="occasion[]" value="business"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.business">Work with quietude</span> <small data-i18n="exp.s2.business_sub">Offsite or solo</small></div></div></label>
 </div>
 </div>
 
 <div id="anniversary_details" class="conditional">
-<label>Tell us about the anniversary <span class="optional">(year, partner's name, anything you'd like us to know)</span></label>
-<input type="text" name="anniversary_details" placeholder="e.g., 10th wedding anniversary &mdash; would love to surprise my wife Elena">
+<label><span data-i18n="exp.s2.anniversary.followup">Tell us about the anniversary</span> <span class="optional" data-i18n="exp.s2.anniversary.followup_help">(year, partner's name, anything you'd like us to know)</span></label>
+<input type="text" name="anniversary_details" placeholder="e.g., 10th wedding anniversary &mdash; would love to surprise my wife Elena" data-i18n-placeholder="exp.s2.anniversary.followup_ph">
 </div>
 
 <div id="birthday_details" class="conditional">
-<label>Whose birthday and which year? <span class="optional">(any details that would help us mark it well)</span></label>
-<input type="text" name="birthday_details" placeholder="e.g., my husband's 50th &mdash; he loves single-malt whiskey">
+<label><span data-i18n="exp.s2.birthday.followup">Whose birthday and which year?</span> <span class="optional" data-i18n="exp.s2.birthday.followup_help">(any details that would help us mark it well)</span></label>
+<input type="text" name="birthday_details" placeholder="e.g., my husband's 50th &mdash; he loves single-malt whiskey" data-i18n-placeholder="exp.s2.birthday.followup_ph">
 </div>
 
 <div class="field-group">
-<label>What does the perfect day look like to you? <span class="optional">(in your own words)</span></label>
-<textarea name="perfect_day" placeholder="A long breakfast on the terrace, a swim in the lagoon, an afternoon read in a hammock, dinner under the stars..."></textarea>
+<label><span data-i18n="exp.s2.perfectday">What does the perfect day look like to you?</span> <span class="optional" data-i18n="exp.s2.perfectday_opt">(in your own words)</span></label>
+<textarea name="perfect_day" placeholder="A long breakfast on the terrace, a swim in the lagoon, an afternoon read in a hammock, dinner under the stars..." data-i18n-placeholder="exp.s2.perfectday_ph"></textarea>
 </div>
 
 <div class="field-group">
-<label>Pace of the trip</label>
+<label data-i18n="exp.s2.pace">Pace of the trip</label>
 <div class="options-grid-3">
-<label class="option"><input type="radio" name="pace" value="slow"><div class="option-card"><div class="option-check"></div><div class="option-text">Slow &amp; spacious <small>Few plans, lots of room to breathe</small></div></div></label>
-<label class="option"><input type="radio" name="pace" value="balanced"><div class="option-card"><div class="option-check"></div><div class="option-text">Balanced <small>A mix of stillness and activity</small></div></div></label>
-<label class="option"><input type="radio" name="pace" value="active"><div class="option-card"><div class="option-check"></div><div class="option-text">Full of life <small>We want to do, see, taste</small></div></div></label>
+<label class="option"><input type="radio" name="pace" value="slow"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.pace.slow">Slow &amp; spacious</span> <small data-i18n="exp.s2.pace.slow_sub">Few plans, lots of room to breathe</small></div></div></label>
+<label class="option"><input type="radio" name="pace" value="balanced"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.pace.balanced">Balanced</span> <small data-i18n="exp.s2.pace.balanced_sub">A mix of stillness and activity</small></div></div></label>
+<label class="option"><input type="radio" name="pace" value="active"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s2.pace.active">Full of life</span> <small data-i18n="exp.s2.pace.active_sub">We want to do, see, taste</small></div></div></label>
 </div>
 </div>
 
 <div class="step-nav">
-<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
-<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="exp.btn.back">Back</span></button>
+<button type="button" class="btn btn-primary" data-next><span data-i18n="exp.btn.continue">Continue</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -308,65 +308,65 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 3: CULINARY -->
 <div class="step" data-step="3">
 <div class="step-header">
-<div class="step-eyebrow">Step 3 of 6</div>
-<h2 class="step-title">At the <em>table</em></h2>
-<p class="step-intro">Our cuisine is rooted in the Yucatán &mdash; honey from our Melipona bees, fish from the lagoon, herbs from the garden. Tell us how to cook for you.</p>
+<div class="step-eyebrow" data-i18n-step="3">Step 3 of 6</div>
+<h2 class="step-title" data-i18n="exp.s3.title">At the <em>table</em></h2>
+<p class="step-intro" data-i18n="exp.s3.intro">Our cuisine is rooted in the Yucatán &mdash; honey from our Melipona bees, fish from the lagoon, herbs from the garden. Tell us how to cook for you.</p>
 </div>
 
 <div class="field-group">
-<label>Dietary preferences <span class="optional">(check any that apply)</span></label>
+<label><span data-i18n="exp.s3.diet">Dietary preferences</span> <span class="optional" data-i18n="exp.s3.diet_opt">(check any that apply)</span></label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="diet[]" value="omnivore"><div class="option-card"><div class="option-check"></div><div class="option-text">No restrictions</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="vegetarian"><div class="option-card"><div class="option-check"></div><div class="option-text">Vegetarian</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="vegan"><div class="option-card"><div class="option-check"></div><div class="option-text">Vegan</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="pescatarian"><div class="option-card"><div class="option-check"></div><div class="option-text">Pescatarian</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="gluten_free"><div class="option-card"><div class="option-check"></div><div class="option-text">Gluten-free</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="dairy_free"><div class="option-card"><div class="option-check"></div><div class="option-text">Dairy-free</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="kosher"><div class="option-card"><div class="option-check"></div><div class="option-text">Kosher</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="halal"><div class="option-card"><div class="option-check"></div><div class="option-text">Halal</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="keto"><div class="option-card"><div class="option-check"></div><div class="option-text">Low-carb / Keto</div></div></label>
-<label class="option"><input type="checkbox" name="diet[]" value="other_diet"><div class="option-card"><div class="option-check"></div><div class="option-text">Other (we'll ask below)</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="omnivore"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.none">No restrictions</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="vegetarian"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.veg">Vegetarian</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="vegan"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.vegan">Vegan</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="pescatarian"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.pesc">Pescatarian</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="gluten_free"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.gf">Gluten-free</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="dairy_free"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.df">Dairy-free</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="kosher"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.kosher">Kosher</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="halal"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.halal">Halal</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="keto"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.keto">Low-carb / Keto</div></div></label>
+<label class="option"><input type="checkbox" name="diet[]" value="other_diet"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.diet.other">Other (we'll ask below)</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Allergies or sensitivities <span class="required">*</span></label>
-<p class="field-help">Anything our kitchen must absolutely know &mdash; nuts, shellfish, sesame, etc. Please be specific.</p>
-<textarea name="allergies" placeholder="e.g., severe tree-nut allergy in our 8-year-old; my partner can't have shellfish" required></textarea>
+<label><span data-i18n="exp.s3.allergies">Allergies or sensitivities</span> <span class="required">*</span></label>
+<p class="field-help" data-i18n="exp.s3.allergies_help">Anything our kitchen must absolutely know &mdash; nuts, shellfish, sesame, etc. Please be specific.</p>
+<textarea name="allergies" placeholder="e.g., severe tree-nut allergy in our 8-year-old; my partner can't have shellfish" data-i18n-placeholder="exp.s3.allergies_ph" required></textarea>
 </div>
 
 <div class="field-group">
-<label>Beverage preferences</label>
+<label data-i18n="exp.s3.bev">Beverage preferences</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="beverage[]" value="wine"><div class="option-card"><div class="option-check"></div><div class="option-text">Wine enthusiasts <small>Pairings, special bottles welcome</small></div></div></label>
-<label class="option"><input type="checkbox" name="beverage[]" value="mezcal"><div class="option-card"><div class="option-check"></div><div class="option-text">Mezcal &amp; agave spirits</div></div></label>
-<label class="option"><input type="checkbox" name="beverage[]" value="cocktails"><div class="option-card"><div class="option-check"></div><div class="option-text">Crafted cocktails</div></div></label>
-<label class="option"><input type="checkbox" name="beverage[]" value="non_alcoholic"><div class="option-card"><div class="option-check"></div><div class="option-text">Non-alcoholic only <small>Botanical drinks, fresh juices</small></div></div></label>
-<label class="option"><input type="checkbox" name="beverage[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text">Champagne moments</div></div></label>
-<label class="option"><input type="checkbox" name="beverage[]" value="coffee_tea"><div class="option-card"><div class="option-check"></div><div class="option-text">Serious coffee &amp; tea <small>Specialty brewing</small></div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="wine"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.bev.wine">Wine enthusiasts</span> <small data-i18n="exp.s3.bev.wine_sub">Pairings, special bottles welcome</small></div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="mezcal"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.bev.mezcal">Mezcal &amp; agave spirits</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="cocktails"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.bev.cocktail">Crafted cocktails</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="non_alcoholic"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.bev.na">Non-alcoholic only</span> <small data-i18n="exp.s3.bev.na_sub">Botanical drinks, fresh juices</small></div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.bev.champ">Champagne moments</div></div></label>
+<label class="option"><input type="checkbox" name="beverage[]" value="coffee_tea"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.bev.coffee">Serious coffee &amp; tea</span> <small data-i18n="exp.s3.bev.coffee_sub">Specialty brewing</small></div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Dining experiences you'd love</label>
+<label data-i18n="exp.s3.dining">Dining experiences you'd love</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="dining[]" value="private_chef"><div class="option-card"><div class="option-check"></div><div class="option-text">Private chef in your villa <small>Tasting menu, just for your party</small></div></div></label>
-<label class="option"><input type="checkbox" name="dining[]" value="beach_dinner"><div class="option-card"><div class="option-check"></div><div class="option-text">Lagoon-side candlelit dinner</div></div></label>
-<label class="option"><input type="checkbox" name="dining[]" value="cooking_class"><div class="option-card"><div class="option-check"></div><div class="option-text">Yucatecan cooking class <small>With our chef &amp; local cooks</small></div></div></label>
-<label class="option"><input type="checkbox" name="dining[]" value="market_tour"><div class="option-card"><div class="option-check"></div><div class="option-text">Market tour in Bacalar</div></div></label>
-<label class="option"><input type="checkbox" name="dining[]" value="mezcal_tasting"><div class="option-card"><div class="option-check"></div><div class="option-text">Curated mezcal tasting</div></div></label>
-<label class="option"><input type="checkbox" name="dining[]" value="surprise"><div class="option-card"><div class="option-check"></div><div class="option-text">Surprise us <small>Trust your kitchen entirely</small></div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="private_chef"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.dining.private">Private chef in your villa</span> <small data-i18n="exp.s3.dining.private_sub">Tasting menu, just for your party</small></div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="beach_dinner"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.dining.beach">Lagoon-side candlelit dinner</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="cooking_class"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.dining.class">Yucatecan cooking class</span> <small data-i18n="exp.s3.dining.class_sub">With our chef &amp; local cooks</small></div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="market_tour"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.dining.market">Market tour in Bacalar</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="mezcal_tasting"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s3.dining.tasting">Curated mezcal tasting</div></div></label>
+<label class="option"><input type="checkbox" name="dining[]" value="surprise"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s3.dining.surprise">Surprise us</span> <small data-i18n="exp.s3.dining.surprise_sub">Trust your kitchen entirely</small></div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Anything else about food &amp; drink we should know? <span class="optional">(favorites, dislikes, rituals)</span></label>
-<textarea name="culinary_notes" placeholder="e.g., my husband loves a strong espresso first thing &mdash; before anything else. We've been told we eat slowly."></textarea>
+<label><span data-i18n="exp.s3.notes">Anything else about food &amp; drink we should know?</span> <span class="optional" data-i18n="exp.s3.notes_opt">(favorites, dislikes, rituals)</span></label>
+<textarea name="culinary_notes" placeholder="e.g., my husband loves a strong espresso first thing &mdash; before anything else. We've been told we eat slowly." data-i18n-placeholder="exp.s3.notes_ph"></textarea>
 </div>
 
 <div class="step-nav">
-<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
-<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="exp.btn.back">Back</span></button>
+<button type="button" class="btn btn-primary" data-next><span data-i18n="exp.btn.continue">Continue</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -374,67 +374,67 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 4: EXPERIENCES -->
 <div class="step" data-step="4">
 <div class="step-header">
-<div class="step-eyebrow">Step 4 of 6</div>
-<h2 class="step-title">The <em>experiences</em></h2>
-<p class="step-intro">Bacalar's seven-coloured lagoon, the Maya jungle, ancient cenotes, the rhythms of village life &mdash; these are the things we curate around. Indicate what calls to you, and we'll build your days from there.</p>
+<div class="step-eyebrow" data-i18n-step="4">Step 4 of 6</div>
+<h2 class="step-title" data-i18n="exp.s4.title">The <em>experiences</em></h2>
+<p class="step-intro" data-i18n="exp.s4.intro">Bacalar's seven-coloured lagoon, the Maya jungle, ancient cenotes, the rhythms of village life &mdash; these are the things we curate around. Indicate what calls to you, and we'll build your days from there.</p>
 </div>
 
 <div class="field-group">
-<label>Wellness &amp; ritual</label>
+<label data-i18n="exp.s4.wellness">Wellness &amp; ritual</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="wellness[]" value="temazcal"><div class="option-card"><div class="option-check"></div><div class="option-text">Temazcal with a local shaman <small>An intimate, authentic ceremony</small></div></div></label>
-<label class="option"><input type="checkbox" name="wellness[]" value="couples_massage"><div class="option-card"><div class="option-check"></div><div class="option-text">Couples massage <small>In your villa, lagoon-side</small></div></div></label>
-<label class="option"><input type="checkbox" name="wellness[]" value="solo_massage"><div class="option-card"><div class="option-check"></div><div class="option-text">Solo treatments <small>Massage, facial, body ritual</small></div></div></label>
-<label class="option"><input type="checkbox" name="wellness[]" value="sound_bath"><div class="option-card"><div class="option-check"></div><div class="option-text">Sound bath / breathwork</div></div></label>
-<label class="option"><input type="checkbox" name="wellness[]" value="yoga"><div class="option-card"><div class="option-check"></div><div class="option-text">Private yoga sessions</div></div></label>
-<label class="option"><input type="checkbox" name="wellness[]" value="cacao"><div class="option-card"><div class="option-check"></div><div class="option-text">Cacao ceremony</div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="temazcal"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.well.temazcal">Temazcal with a local shaman</span> <small data-i18n="exp.s4.well.temazcal_sub">An intimate, authentic ceremony</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="couples_massage"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.well.couples">Couples massage</span> <small data-i18n="exp.s4.well.couples_sub">In your villa, lagoon-side</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="solo_massage"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.well.solo">Solo treatments</span> <small data-i18n="exp.s4.well.solo_sub">Massage, facial, body ritual</small></div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="sound_bath"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.well.sound">Sound bath / breathwork</div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="yoga"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.well.yoga">Private yoga sessions</div></div></label>
+<label class="option"><input type="checkbox" name="wellness[]" value="cacao"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.well.cacao">Cacao ceremony</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>On the lagoon &amp; in the water</label>
+<label data-i18n="exp.s4.water">On the lagoon &amp; in the water</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="water[]" value="private_boat"><div class="option-card"><div class="option-check"></div><div class="option-text">Private sailboat day <small>Captain, lunch, the seven blues</small></div></div></label>
-<label class="option"><input type="checkbox" name="water[]" value="kayak"><div class="option-card"><div class="option-check"></div><div class="option-text">Kayak or paddleboard</div></div></label>
-<label class="option"><input type="checkbox" name="water[]" value="cenote"><div class="option-card"><div class="option-check"></div><div class="option-text">Cenote excursion <small>Sacred Maya freshwater pools</small></div></div></label>
-<label class="option"><input type="checkbox" name="water[]" value="stromatolites"><div class="option-card"><div class="option-check"></div><div class="option-text">Stromatolite tour <small>Ancient living formations</small></div></div></label>
-<label class="option"><input type="checkbox" name="water[]" value="fishing"><div class="option-card"><div class="option-check"></div><div class="option-text">Fly fishing in the flats</div></div></label>
-<label class="option"><input type="checkbox" name="water[]" value="sunset_cruise"><div class="option-card"><div class="option-check"></div><div class="option-text">Sunset cruise with mezcal</div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="private_boat"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.water.sail">Private sailboat day</span> <small data-i18n="exp.s4.water.sail_sub">Captain, lunch, the seven blues</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="kayak"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.water.kayak">Kayak or paddleboard</div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="cenote"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.water.cenote">Cenote excursion</span> <small data-i18n="exp.s4.water.cenote_sub">Sacred Maya freshwater pools</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="stromatolites"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.water.strom">Stromatolite tour</span> <small data-i18n="exp.s4.water.strom_sub">Ancient living formations</small></div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="fishing"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.water.fish">Fly fishing in the flats</div></div></label>
+<label class="option"><input type="checkbox" name="water[]" value="sunset_cruise"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.water.sunset">Sunset cruise with mezcal</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Culture, history &amp; the land</label>
+<label data-i18n="exp.s4.culture">Culture, history &amp; the land</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="culture[]" value="kohunlich"><div class="option-card"><div class="option-check"></div><div class="option-text">Kohunlich ruins <small>Maya archaeological site</small></div></div></label>
-<label class="option"><input type="checkbox" name="culture[]" value="chacchoben"><div class="option-card"><div class="option-check"></div><div class="option-text">Chacchoben ruins <small>Pyramids in the jungle</small></div></div></label>
-<label class="option"><input type="checkbox" name="culture[]" value="village"><div class="option-card"><div class="option-check"></div><div class="option-text">Bacalar village walk <small>With a local guide</small></div></div></label>
-<label class="option"><input type="checkbox" name="culture[]" value="artisan"><div class="option-card"><div class="option-check"></div><div class="option-text">Artisan studio visits <small>Textiles, ceramics, woodwork</small></div></div></label>
-<label class="option"><input type="checkbox" name="culture[]" value="bee_visit"><div class="option-card"><div class="option-check"></div><div class="option-text">Visit our Melipona bees <small>The sacred stingless bee</small></div></div></label>
-<label class="option"><input type="checkbox" name="culture[]" value="bird"><div class="option-card"><div class="option-check"></div><div class="option-text">Birdwatching in the reserves</div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="kohunlich"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.cul.kohun">Kohunlich ruins</span> <small data-i18n="exp.s4.cul.kohun_sub">Maya archaeological site</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="chacchoben"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.cul.chac">Chacchoben ruins</span> <small data-i18n="exp.s4.cul.chac_sub">Pyramids in the jungle</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="village"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.cul.village">Bacalar village walk</span> <small data-i18n="exp.s4.cul.village_sub">With a local guide</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="artisan"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.cul.artisan">Artisan studio visits</span> <small data-i18n="exp.s4.cul.artisan_sub">Textiles, ceramics, woodwork</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="bee_visit"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.cul.bee">Visit our Melipona bees</span> <small data-i18n="exp.s4.cul.bee_sub">The sacred stingless bee</small></div></div></label>
+<label class="option"><input type="checkbox" name="culture[]" value="bird"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.cul.bird">Birdwatching in the reserves</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Logistics &amp; refinements</label>
+<label data-i18n="exp.s4.logistics">Logistics &amp; refinements</label>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="logistics[]" value="private_driver"><div class="option-card"><div class="option-check"></div><div class="option-text">Private vehicle &amp; driver <small>For the duration of your stay</small></div></div></label>
-<label class="option"><input type="checkbox" name="logistics[]" value="photographer"><div class="option-card"><div class="option-check"></div><div class="option-text">Personal photographer <small>An hour, a day, the whole stay</small></div></div></label>
-<label class="option"><input type="checkbox" name="logistics[]" value="florist"><div class="option-card"><div class="option-check"></div><div class="option-text">Florist for arrival</div></div></label>
-<label class="option"><input type="checkbox" name="logistics[]" value="childcare"><div class="option-card"><div class="option-check"></div><div class="option-text">Trusted childcare</div></div></label>
-<label class="option"><input type="checkbox" name="logistics[]" value="butler"><div class="option-card"><div class="option-check"></div><div class="option-text">Dedicated butler</div></div></label>
-<label class="option"><input type="checkbox" name="logistics[]" value="security"><div class="option-card"><div class="option-check"></div><div class="option-text">Discretion / privacy detail</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="private_driver"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.log.driver">Private vehicle &amp; driver</span> <small data-i18n="exp.s4.log.driver_sub">For the duration of your stay</small></div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="photographer"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s4.log.photog">Personal photographer</span> <small data-i18n="exp.s4.log.photog_sub">An hour, a day, the whole stay</small></div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="florist"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.log.florist">Florist for arrival</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="childcare"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.log.child">Trusted childcare</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="butler"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.log.butler">Dedicated butler</div></div></label>
+<label class="option"><input type="checkbox" name="logistics[]" value="security"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s4.log.security">Discretion / privacy detail</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Anything else you've dreamed of, that we haven't listed? <span class="optional"></span></label>
-<textarea name="experiences_other" placeholder="e.g., a calligraphy lesson; a private astronomer for a stargazing night; a chocolatier workshop with the kids..."></textarea>
+<label><span data-i18n="exp.s4.other">Anything else you've dreamed of, that we haven't listed?</span> <span class="optional"></span></label>
+<textarea name="experiences_other" placeholder="e.g., a calligraphy lesson; a private astronomer for a stargazing night; a chocolatier workshop with the kids..." data-i18n-placeholder="exp.s4.other_ph"></textarea>
 </div>
 
 <div class="step-nav">
-<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
-<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="exp.btn.back">Back</span></button>
+<button type="button" class="btn btn-primary" data-next><span data-i18n="exp.btn.continue">Continue</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -442,38 +442,38 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 5: FINAL TOUCHES -->
 <div class="step" data-step="5">
 <div class="step-header">
-<div class="step-eyebrow">Step 5 of 6</div>
-<h2 class="step-title">The smaller <em>graces</em></h2>
-<p class="step-intro">The little things often make the trip. Here is where we ask after them.</p>
+<div class="step-eyebrow" data-i18n-step="5">Step 5 of 6</div>
+<h2 class="step-title" data-i18n="exp.s5.title">The smaller <em>graces</em></h2>
+<p class="step-intro" data-i18n="exp.s5.intro">The little things often make the trip. Here is where we ask after them.</p>
 </div>
 
 <div class="field-group">
-<label>Awaiting you on arrival</label>
-<p class="field-help">A welcome that feels personal. Tick anything that resonates &mdash; or specify your own below.</p>
+<label data-i18n="exp.s5.arrival_label">Awaiting you on arrival</label>
+<p class="field-help" data-i18n="exp.s5.arrival_help">A welcome that feels personal. Tick anything that resonates &mdash; or specify your own below.</p>
 <div class="options-grid">
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text">A bottle of champagne, chilled</div></div></label>
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="flowers"><div class="option-card"><div class="option-check"></div><div class="option-text">Fresh flowers in the room</div></div></label>
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="fruit"><div class="option-card"><div class="option-check"></div><div class="option-text">Local fruit &amp; honey board</div></div></label>
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="spirits"><div class="option-card"><div class="option-check"></div><div class="option-text">A particular bottle of spirits <small>Tell us which</small></div></div></label>
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="books"><div class="option-card"><div class="option-check"></div><div class="option-text">Curated books &amp; reading</div></div></label>
-<label class="option"><input type="checkbox" name="arrival_touches[]" value="note"><div class="option-card"><div class="option-check"></div><div class="option-text">A handwritten welcome note</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="champagne"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s5.champ">A bottle of champagne, chilled</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="flowers"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s5.flowers">Fresh flowers in the room</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="fruit"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s5.fruit">Local fruit &amp; honey board</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="spirits"><div class="option-card"><div class="option-check"></div><div class="option-text"><span data-i18n="exp.s5.spirits">A particular bottle of spirits</span> <small data-i18n="exp.s5.spirits_sub">Tell us which</small></div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="books"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s5.books">Curated books &amp; reading</div></div></label>
+<label class="option"><input type="checkbox" name="arrival_touches[]" value="note"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s5.note">A handwritten welcome note</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>Specific bottles, books, or items to source <span class="optional"></span></label>
-<textarea name="sourcing_requests" placeholder="e.g., a bottle of Casa Dragones Joven; the latest Patti Smith memoir; a particular vinyl &mdash; we'll do our best to source it before you arrive"></textarea>
+<label><span data-i18n="exp.s5.sourcing">Specific bottles, books, or items to source</span> <span class="optional"></span></label>
+<textarea name="sourcing_requests" placeholder="e.g., a bottle of Casa Dragones Joven; the latest Patti Smith memoir; a particular vinyl &mdash; we'll do our best to source it before you arrive" data-i18n-placeholder="exp.s5.sourcing_ph"></textarea>
 </div>
 
 <div class="field-group">
-<label>Is there anything else we should know to make this perfect?</label>
-<p class="field-help">A surprise you're planning. A health consideration. A meaningful date. A guest with a fear of water. Whatever it is &mdash; this is the place.</p>
-<textarea name="final_notes" placeholder="Speak freely. The more you share, the better we can prepare."></textarea>
+<label data-i18n="exp.s5.final">Is there anything else we should know to make this perfect?</label>
+<p class="field-help" data-i18n="exp.s5.final_help">A surprise you're planning. A health consideration. A meaningful date. A guest with a fear of water. Whatever it is &mdash; this is the place.</p>
+<textarea name="final_notes" placeholder="Speak freely. The more you share, the better we can prepare." data-i18n-placeholder="exp.s5.final_ph"></textarea>
 </div>
 
 <div class="step-nav">
-<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
-<button type="button" class="btn btn-primary" data-next>Continue<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="exp.btn.back">Back</span></button>
+<button type="button" class="btn btn-primary" data-next><span data-i18n="exp.btn.continue">Continue</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -481,42 +481,42 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- STEP 6: CONTACT -->
 <div class="step" data-step="6">
 <div class="step-header">
-<div class="step-eyebrow">Step 6 of 6</div>
-<h2 class="step-title">Where to <em>find you</em></h2>
-<p class="step-intro">A team member will be in touch within 24 hours, in your preferred way, to begin the conversation.</p>
+<div class="step-eyebrow" data-i18n-step="6">Step 6 of 6</div>
+<h2 class="step-title" data-i18n="exp.s6.title">Where to <em>find you</em></h2>
+<p class="step-intro" data-i18n="exp.s6.intro">A team member will be in touch within 24 hours, in your preferred way, to begin the conversation.</p>
 </div>
 
 <div class="field-group">
 <div class="field-row">
-<div><label>Full Name <span class="required">*</span></label><input type="text" name="full_name" placeholder="Jane Doe" required></div>
-<div><label>Country of Residence</label><input type="text" name="country" placeholder="United States"></div>
+<div><label><span data-i18n="exp.s6.name">Full Name</span> <span class="required">*</span></label><input type="text" name="full_name" placeholder="Jane Doe" data-i18n-placeholder="exp.s6.name_ph" required></div>
+<div><label data-i18n="exp.s6.country">Country of Residence</label><input type="text" name="country" placeholder="United States" data-i18n-placeholder="exp.s6.country_ph"></div>
 </div>
 </div>
 
 <div class="field-group">
 <div class="field-row">
-<div><label>Email <span class="required">*</span></label><input type="email" name="email" placeholder="you@example.com" required></div>
-<div><label>Phone <span class="optional">(with country code)</span></label><input type="tel" name="phone" placeholder="+1 305 555 0100"></div>
+<div><label><span data-i18n="exp.s6.email">Email</span> <span class="required">*</span></label><input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="exp.s6.email_ph" required></div>
+<div><label><span data-i18n="exp.s6.phone">Phone</span> <span class="optional" data-i18n="exp.s6.phone_opt">(with country code)</span></label><input type="tel" name="phone" placeholder="+1 305 555 0100" data-i18n-placeholder="exp.s6.phone_ph"></div>
 </div>
 </div>
 
 <div class="field-group">
-<label>Preferred way to be reached</label>
+<label data-i18n="exp.s6.contactpref">Preferred way to be reached</label>
 <div class="options-grid-3">
-<label class="option"><input type="radio" name="contact_pref" value="email"><div class="option-card"><div class="option-check"></div><div class="option-text">Email</div></div></label>
-<label class="option"><input type="radio" name="contact_pref" value="phone"><div class="option-card"><div class="option-check"></div><div class="option-text">Phone</div></div></label>
-<label class="option"><input type="radio" name="contact_pref" value="whatsapp"><div class="option-card"><div class="option-check"></div><div class="option-text">WhatsApp</div></div></label>
+<label class="option"><input type="radio" name="contact_pref" value="email"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s6.contactpref.email">Email</div></div></label>
+<label class="option"><input type="radio" name="contact_pref" value="phone"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s6.contactpref.phone">Phone</div></div></label>
+<label class="option"><input type="radio" name="contact_pref" value="whatsapp"><div class="option-card"><div class="option-check"></div><div class="option-text" data-i18n="exp.s6.contactpref.wa">WhatsApp</div></div></label>
 </div>
 </div>
 
 <div class="field-group">
-<label>How did you hear of Melipona Bacalar? <span class="optional"></span></label>
-<select name="referral"><option value="">Choose one</option><option>Friend or family referral</option><option>Travel advisor</option><option>Press or magazine</option><option>Social media</option><option>Search</option><option>Returning guest</option><option>Other</option></select>
+<label><span data-i18n="exp.s6.referral">How did you hear of Melipona Bacalar?</span> <span class="optional"></span></label>
+<select name="referral"><option value="" data-i18n="exp.s1.choose">Choose one</option><option data-i18n="exp.s6.ref.friend">Friend or family referral</option><option data-i18n="exp.s6.ref.advisor">Travel advisor</option><option data-i18n="exp.s6.ref.press">Press or magazine</option><option data-i18n="exp.s6.ref.social">Social media</option><option data-i18n="exp.s6.ref.search">Search</option><option data-i18n="exp.s6.ref.return">Returning guest</option><option data-i18n="exp.s6.ref.other">Other</option></select>
 </div>
 
 <div class="step-nav">
-<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</button>
-<button type="submit" class="btn btn-primary">Send Inquiry<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+<button type="button" class="btn btn-secondary" data-prev><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-i18n="exp.btn.back">Back</span></button>
+<button type="submit" class="btn btn-primary"><span data-i18n="exp.btn.submit">Send Inquiry</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
 </div>
 </div>
 
@@ -525,10 +525,10 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 <!-- CONFIRMATION -->
 <div class="confirmation" id="confirmation">
 <div class="confirmation-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l5 5L20 7"/></svg></div>
-<h2>Thank you. We've <em>received</em> your note.</h2>
-<p>Your inquiry is already in the hands of our concierge team. Within 24 hours, someone will reach out personally &mdash; in the way you've asked &mdash; to begin shaping your stay.</p>
-<p>In the meantime, please feel free to add anything that comes to mind. We read every word.</p>
-<div class="signoff">&mdash; The Melipona Bacalar Team</div>
+<h2 data-i18n="exp.confirm.title">Thank you. We've <em>received</em> your note.</h2>
+<p data-i18n="exp.confirm.body1">Your inquiry is already in the hands of our concierge team. Within 24 hours, someone will reach out personally &mdash; in the way you've asked &mdash; to begin shaping your stay.</p>
+<p data-i18n="exp.confirm.body2">In the meantime, please feel free to add anything that comes to mind. We read every word.</p>
+<div class="signoff" data-i18n="exp.confirm.signoff">&mdash; The Melipona Bacalar Team</div>
 </div>
 
 </section>
@@ -666,6 +666,6 @@ select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='
   });
 })();
 </script>
-
+<script src="i18n.js"></script>
 </body>
 </html>
